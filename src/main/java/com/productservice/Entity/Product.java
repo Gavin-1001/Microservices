@@ -1,8 +1,6 @@
 package com.productservice.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,7 +17,8 @@ import java.math.BigDecimal;
 public class Product {
 
     @Id
-    public String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public long id;
     public String name;
     public String description;
     public BigDecimal price;
